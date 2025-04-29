@@ -12,27 +12,29 @@ A modular FastAPI backend application structured for scalability, testability, a
 ## 📁 Folder Structure
 ```markdown
 
-app/
-├── api/
-│   └── v1/
-│       ├── controllers/        # (Optional) Request logic or route-specific handlers
-│       └── routes/             # FastAPI route definitions
-├── core/                       # Core settings, configs, and security utilities
-│   ├── exceptions.py           # Custom exception classes and handlers
-│   └── security.py             # Security utilities (JWT, OAuth2, etc.)
-├── db/
-│   └── repositories/           # Database interaction layer (repository pattern)
-├── models/                     # ORM models (e.g., SQLAlchemy, Tortoise)
-├── schemas/                    # Pydantic models for request and response validation
-├── services/                   # Business logic and application services
-├── tests/                      # Unit and integration tests
-├── utils/                      # Utility and helper functions
-├── .env                         # Environment variable definitions
-├── .gitignore                   # Git ignore rules
-├── fastapi.config.py            # Application configuration (e.g., CORS, startup events)
-├── main.py                      # Application entry point (FastAPI instance)
-├── README.md                    # Project documentation
-└── requirements.txt             # Python dependencies list
+CREATE-FASTAPI-APP/
+├── app/
+│   ├── api/
+│   │   └── v1/
+│   │       ├── controllers/        # (Optional) Request decorators or shared logic
+│   │       └── routes/             # FastAPI route definitions using APIRouter
+│   ├── core/                       
+│   │   ├── exceptions.py           # Custom exception classes and handlers
+│   │   └── security.py             # Auth utilities (JWT, OAuth, etc.)
+│   ├── db/
+│   │   └── repositories/           # Database access logic (repository pattern)
+│   ├── models/                     # ORM models (e.g., SQLAlchemy)
+│   ├── schemas/                    # Pydantic models for request/response validation
+│   ├── services/                   # Business logic layer
+│   ├── tests/                      # Unit & integration test cases
+│   └── utils/                      # Reusable utility/helper functions
+│
+├── .env                            # Environment variable definitions
+├── .gitignore                      # Files and folders to ignore in Git
+├── fastapi.config.py               # Global application config (CORS, init, etc.)
+├── main.py                         # FastAPI app entry point (Uvicorn starts here)
+├── README.md                       # Project documentation
+└── requirements.txt                # Python dependencies
 
 
 ````
